@@ -17,7 +17,7 @@ public class Caculator {
         int oper = 0;
         int res = 0;
         char ch = ' ';
-        String sb = new String();
+        StringBuilder sb = new StringBuilder();
 
         while (true) {
             //取expression中的每一个字符
@@ -40,13 +40,13 @@ public class Caculator {
                 }
             } else {
                 //多位数的处理，需要向后再检查一位
-                sb += ch;
+                sb = sb.append(ch);
                 if (index == expression.length()-1){
-                    numStack.push(Integer.parseInt(sb));
+                    numStack.push(Integer.parseInt(sb.toString()));
                 }else {
                     if (operStack.isOper(expression.substring(index+1,index+2).charAt(0))){
-                        numStack.push(Integer.parseInt(sb));
-                        sb = "";
+                        numStack.push(Integer.parseInt(sb.toString()));
+                        sb.setLength(0);
                     }
                 }
 
