@@ -1,0 +1,167 @@
+package stack;
+
+public class Caculator {
+
+    public static void main(String[] args) {
+
+        //完成表达式的计算思路
+        String expression = "30+2*6-2";
+        //创建两个栈，一个数栈，一个符号栈
+        ArrayStack2 numStack = new ArrayStack2(10);
+        ArrayStack2 operStack = new ArrayStack2(10);
+
+        //定义相关变量
+        int index = 0;
+        int num1 = 0;
+        int num2 = 0;
+        int oper = 0;
+        int res = 0;
+        char ch = ' ';
+        String sb = new String();
+
+        while (true) {
+            //取expression中的每一个字符
+            ch = expression.substring(index, index + 1).charAt(0);
+            if (operStack.isOper(ch)) {
+                if (!operStack.isEmpty()) {
+                    if (operStack.priority(ch) <= operStack.priority(operStack.peek())) {
+                        num1 = numStack.pop();
+                        num2 = numStack.pop();
+                        oper = operStack.pop();
+                        res = numStack.cal(num1, num2, oper);
+
+                        numStack.push(res);
+                        operStack.push(ch);
+                    } else {
+                        operStack.push(ch);
+                    }
+                } else {
+                    operStack.push(ch);
+                }
+            } else {
+                //多位数的处理，需要向后再检查一位
+                sb += ch;
+                if (index == expression.length()-1){
+                    numStack.push(Integer.parseInt(sb));
+                }else {
+                    if (operStack.isOper(expression.substring(index+1,index+2).charAt(0))){
+                        numStack.push(Integer.parseInt(sb));
+                        sb = "";
+                    }
+                }
+
+                //numStack.push(ch - 48);
+            }
+
+            //index+1 判断是否扫描到最后
+            index++;
+            if (index >= expression.length()){
+                break;
+            }
+        }
+
+        while (true){
+            //符号栈为空则计算完成
+            if (operStack.isEmpty()){
+                break;
+            }
+
+            num1 = numStack.pop();
+            num2 = numStack.pop();
+            oper = operStack.pop();
+            res = numStack.cal(num1,num2,oper);
+            numStack.push(res);
+        }
+        System.out.printf("表达式%s = %d",expression,numStack.pop());
+
+    }
+
+}
+
+class ArrayStack2 {
+
+    private int maxSize;
+    private int[] stack;
+    private int top = -1;
+
+    public ArrayStack2(int maxSize) {
+        this.maxSize = maxSize;
+        stack = new int[this.maxSize];
+    }
+
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    public boolean isFull() {
+        return top == maxSize - 1;
+    }
+
+    public int peek() {
+        return stack[top];
+    }
+
+    public void push(int data) {
+
+        if (isFull()) {
+            System.out.println("栈已满，不能存入数据");
+            return;
+        }
+        top++;
+        stack[top] = data;
+    }
+
+    public int pop() {
+        int value = stack[top];
+        top -= 1;
+        return value;
+    }
+
+
+    public void list() {
+        if (isEmpty()) {
+            System.out.println("栈为空，没有数据");
+            return;
+        }
+        for (int i = top; i >= 0; i--) {
+            System.out.printf("stack[%d] = %d", i, stack[i]);
+        }
+    }
+
+    //返回运算符优先级，返回数字越大优先级越高
+    public int priority(int oper) {
+        if (oper == '*' || oper == '/') {
+            return 1;
+        } else if (oper == '+' || oper == '-') {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+
+    //判断是不是运算符
+    public boolean isOper(char val) {
+        return val == '+' || val == '-' || val == '*' || val == '/';
+    }
+
+    //计算方法
+    public int cal(int num1, int num2, int oper) {
+        int res = 0;
+        switch (oper) {
+            case '+':
+                res = num1 + num2;
+                break;
+            case '-':
+                res = num2 - num1;
+                break;
+            case '*':
+                res = num1 * num2;
+                break;
+            case '/':
+                res = num2 / num1;
+                break;
+        }
+        return res;
+    }
+
+}
