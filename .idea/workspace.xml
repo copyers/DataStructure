@@ -13,6 +13,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
@@ -21,13 +24,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sort/bubleSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+            <state relative-caret-position="427">
+              <caret line="300" column="13" lean-forward="true" selection-start-line="300" selection-start-column="13" selection-end-line="300" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#bubleSort#0;class#bubleSort#0" />
                 <element signature="method#improvedBubleSort#0;class#bubleSort#0" />
                 <element signature="method#selectSort#0;class#bubleSort#0" />
+                <element signature="method#insertSort#0;class#bubleSort#0" />
+                <element signature="method#shellSort#0;class#bubleSort#0" />
+                <element signature="method#shellImproveSort#0;class#bubleSort#0" />
+                <element signature="method#quickSort#0;class#bubleSort#0" />
+                <element signature="method#merge#0;class#bubleSort#0" />
+                <element signature="method#mergeSort#0;class#bubleSort#0" />
               </folding>
             </state>
           </provider>
@@ -72,11 +81,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="615" />
-    <option name="y" value="31" />
-    <option name="width" value="1052" />
-    <option name="height" value="1092" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="805" />
+    <option name="y" value="155" />
+    <option name="width" value="1975" />
+    <option name="height" value="1570" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -85,32 +94,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="DataStructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataStructure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataStructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataStructure" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataStructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataStructure" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sort" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -119,7 +103,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -228,15 +212,16 @@
       <workItem from="1577792909958" duration="6685000" />
       <workItem from="1577846295685" duration="16350000" />
       <workItem from="1577927425230" duration="17079000" />
+      <workItem from="1578106893674" duration="6155000" />
+      <workItem from="1578574782871" duration="79000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67144000" />
+    <option name="totallyTimeSpent" value="74079000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49822694" weight="0.25545675" />
       <window_info id="Structure" order="1" sideWeight="0.50177306" side_tool="true" weight="0.24887556" />
@@ -247,12 +232,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29129663" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29129663" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39893618" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.7033748" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3623446" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3279678" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32997987" />
@@ -452,13 +437,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sort/bubleSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        <state relative-caret-position="427">
+          <caret line="300" column="13" lean-forward="true" selection-start-line="300" selection-start-column="13" selection-end-line="300" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#bubleSort#0;class#bubleSort#0" />
             <element signature="method#improvedBubleSort#0;class#bubleSort#0" />
             <element signature="method#selectSort#0;class#bubleSort#0" />
+            <element signature="method#insertSort#0;class#bubleSort#0" />
+            <element signature="method#shellSort#0;class#bubleSort#0" />
+            <element signature="method#shellImproveSort#0;class#bubleSort#0" />
+            <element signature="method#quickSort#0;class#bubleSort#0" />
+            <element signature="method#merge#0;class#bubleSort#0" />
+            <element signature="method#mergeSort#0;class#bubleSort#0" />
           </folding>
         </state>
       </provider>
